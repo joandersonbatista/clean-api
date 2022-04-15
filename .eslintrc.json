@@ -12,6 +12,14 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "eol-last": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
   }
 }
