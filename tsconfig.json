@@ -7,7 +7,10 @@
     "esModuleInterop": true,
     "allowJs": true,
     "paths": {
-      "~controller": ["src/presentation/controllers"]
+      "~controller": ["src/presentation/controllers"],
+      "~presentaion-protocols": ["src/presentation/protocols"],
+      "~presentation-errors": ["src/presentation/errors"],
+      "~presentation-helpers": ["src/presentation/helpers"]
     }
   },
   "include": ["src/**/*", "**/*.spec.ts", "**/*.test.ts"]

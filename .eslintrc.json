@@ -15,15 +15,6 @@
   "root": true,
   "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "import"],
   "rules": {
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "protocol.ts": "never",
-        "jsx": "never",
-        "tsx": "never"
-      }
-    ],
     "eol-last": "off",
     "no-console": "off",
     "semi": "off",
@@ -35,13 +26,5 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
-  },
-  "settings": {
-    "import/resolver": {
-      "alias": {
-        "map": [["~controller", "./src/presentation/controllers"]],
-        "extensions": [".ts", ".js", ".json"]
-      }
-    }
   }
 }

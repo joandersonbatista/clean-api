@@ -16,7 +16,10 @@ module.exports = {
       {
         root: ['.'],
         alias: {
-          '~controller': './src/presentation/controllers',
+          '~controller': './dist/presentation/controllers',
+          '~presentaion-protocols': 'dist/presentation/protocols',
+          '~presentation-errors': 'dist/presentation/errors',
+          '~presentation-helpers': 'dist/presentation/helpers',
         },
       },
     ],
