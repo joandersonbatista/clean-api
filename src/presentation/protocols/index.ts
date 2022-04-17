@@ -1,2 +1,2 @@
-export * from './Http.protocol';
-export * from './Controller.protocol';
+export * from './http-protocol';
+export * from './controller-protocol'
