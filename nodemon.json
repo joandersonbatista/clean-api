@@ -1,4 +1,4 @@
 {
   "ignore": [".git", "**/*.spec.ts", "**/*.test.ts", "node_modules"],
-  "delay": 2000
+  "delay": 0
 }

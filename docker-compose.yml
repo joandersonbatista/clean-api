@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  clean-api-mongo:
+    image: mongo:latest
+    container_name: clean-api-mongo
+    networks:
+      - clean-api-network
+    ports:
+      - '27017:27017'
+
+  clean-api:
+    container_name: clean-api
+    networks:
+      - clean-api-network
+    depends_on:
+      - clean-api-mongo
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: yarn dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/src/app
+      - ./node_modules:/src/app/node_modules
+
+networks:
+  clean-api-network:
+    driver: bridge

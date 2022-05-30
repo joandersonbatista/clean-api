@@ -12,5 +12,26 @@
   },
   "code-runner.executorMap": {
     "typescript": "npx ts-node --files"
+  },
+  "material-icon-theme.folders.associations": {
+    "entities": "class",
+    "useCases": "Job",
+    "repositories": "mappings",
+    "Implementation": "Lib",
+    "providers": "Project",
+    "integration": "Connection",
+    "unitary": "Guard",
+    "conversations": "",
+    "presentation": "Layout",
+    "infrastructure": "Vm",
+    "domain": "Other",
+    "protocols": "interface",
+    "use-cases": "Job",
+    "application": "App"
+  },
+  "material-icon-theme.files.associations": {
+    "server.ts": "Drawio",
+    "*.application.ts": "Contributing",
+    "auth-middleware.ts": "Lock"
   }
 }

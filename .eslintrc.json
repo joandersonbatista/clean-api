@@ -4,27 +4,59 @@
     "node": true,
     "jest": true
   },
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "extends": ["plugin:prettier/recommended"],
+  "plugins": ["@typescript-eslint", "import-helpers", "import", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
-    "project": "tsconfig.json",
+    "project": "./tsconfig.json",
     "sourceType": "module",
     "tsconfigRootDir": "./"
   },
   "root": true,
-  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "import"],
   "rules": {
     "eol-last": "off",
     "no-console": "off",
     "semi": "off",
+    "prettier/prettier": "error",
+    "import/no-unresolved": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ],
     "import-helpers/order-imports": [
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", ["parent", "sibling", "index"]],
+        "groups": [
+          "module",
+          "/^~entity/",
+          "/^~value-object/",
+          "/^~domain-protocol/",
+          "/^~application/",
+          "/^~dto/",
+          "/^~repositorie/",
+          "/^~controller/",
+          "/^~response/",
+          "/^~request/",
+          "/^~presentation-interface/",
+          "/^~infrastructure-interface/",
+          "/^~factory/",
+          "/^~error/",
+          ["parent", "sibling", "index"]
+        ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }
