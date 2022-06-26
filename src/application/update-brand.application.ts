@@ -15,7 +15,7 @@ export default class UpdateBrandApplication {
 
     if (!brand) throw new NotFoundError('brand does not exists');
 
-    !!input?.name && brand.changeName(new BrandName(input.name));
+    if (input.name) brand.changeName(new BrandName(input.name));
 
     await this.brandRepositorie.update(brand);
   }

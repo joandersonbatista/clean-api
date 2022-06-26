@@ -1,6 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/mr-prince/Documentos/project/clean-api'
+make: Entering directory '/home/mr-prince/projects/clean-api'
 npm i
 docker-compose up -d
-make: Leaving directory '/home/mr-prince/Documentos/project/clean-api'
+make: Leaving directory '/home/mr-prince/projects/clean-api'
  

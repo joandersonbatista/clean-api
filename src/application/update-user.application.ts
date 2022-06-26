@@ -22,10 +22,12 @@ export default class UpdateUserApplication {
 
     if (!user) throw new NotFoundError('user does not exists');
 
-    !!input?.name && user.changeName(new FullName(input.name));
-    !!input?.email && user.changeEmail(new Email(input.email));
-    !!input?.password &&
-      user.changePassword(await new Password(input.password).hash(this.Hash));
+    if (input.name) user.changeName(new FullName(input.name));
+    if (input.email) user.changeEmail(new Email(input.email));
+    if (input.password) {
+      const newPassword = new Password(input.password);
+      user.changePassword(await newPassword.hash(this.Hash));
+    }
 
     await this.userRepositorie.update(user);
   }

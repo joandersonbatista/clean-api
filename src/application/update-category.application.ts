@@ -15,7 +15,7 @@ export default class UpdateCategoryApplication {
 
     if (!category) throw new NotFoundError('brand does not exists');
 
-    !!input?.name && category.changeName(new CategoryName(input.name));
+    if (input.name) category.changeName(new CategoryName(input.name));
 
     await this.categoryRepositorie.update(category);
   }

@@ -21,9 +21,9 @@ export default class UpdateProductApplication {
 
     if (!product) throw new NotFoundError('product does not exists');
 
-    !!input?.name && product.changeName(new ProductName(input.name));
+    if (input.name) product.changeName(new ProductName(input.name));
 
-    if (input?.brandId) {
+    if (input.brandId) {
       const brandId = new Id(input.brandId);
 
       const brand = await this.brandRepositorie.findById(brandId);
@@ -33,7 +33,7 @@ export default class UpdateProductApplication {
       product.changeBrandId(brandId);
     }
 
-    if (input?.categoryId) {
+    if (input.categoryId) {
       const categoryId = new Id(input.categoryId);
 
       const category = await this.categoryRepositorie.findById(categoryId);
